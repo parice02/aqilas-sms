@@ -12,7 +12,7 @@ print(
     send_sms(
         base_url,
         token,
-        receivers=["+226XXX", "+226XXX", "+226XXX", "+226XXX"],
+        receivers=["+33XXX", "+226XXX", "+226XXX", "+229XXX"],
         content="send test sms for ETIMBRE",
     )
 )
