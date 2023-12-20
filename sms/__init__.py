@@ -1,7 +1,5 @@
 import requests
 
-
-
 credits_url = "credit"
 sms = "sms"
 
