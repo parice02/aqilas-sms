@@ -1,0 +1,13 @@
+{
+    "cSpell.words": [
+        "aqilas",
+        "bulkid",
+        "ligdicash",
+        "onatel",
+        "phonenumber"
+    ],
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "python.formatting.provider": "none"
+}
