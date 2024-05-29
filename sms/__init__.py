@@ -1,39 +1,41 @@
 import requests
 
+base_url = "https://www.aqilas.com/api/v1/"
 credits_url = "credit"
 sms = "sms"
 
+def get_url(base:str, endpoint:str):
+    return base + endpoint if base[-1] == "/" else base + "/" + endpoint
 
-def get_credit(url: str, token: str):
-    v = url + credits_url if url[-1] == "/" else url + "/" + credits_url
+
+def get_credit(token: str):
+    url = get_url(base_url, credits_url)
     headers = {
         "content-type": "application/json",
         "X-AUTH-TOKEN": token,
     }
-    return requests.get(v, headers=headers).json()
+    return requests.get(url, headers=headers).json()
 
 
 def send_sms(
-    url: str,
     token: str,
-    sender: str = "ETIMBRE",
+    sender: str = "",
     receivers: list = [],
-    content: str = "",
+    content: str = ""
 ):
-    v = url + sms if url[-1] == "/" else url + "/" + sms
+    url = get_url(base_url, sms)
     headers = {
         "content-type": "application/json",
         "X-AUTH-TOKEN": token,
     }
     data = {"from": sender, "to": receivers, "text": content}
-    return requests.post(v, headers=headers, json=data).json()
+    return requests.post(url, headers=headers, json=data).json()
 
 
 def get_sms_status(url: str, token: str, bulkid: str):
-    v = url + sms if url[-1] == "/" else url + "/" + sms
-    v = v + "/" + bulkid
+    url = get_url(base_url, sms+f"/{bulkid}")
     headers = {
         "content-type": "application/json",
         "X-AUTH-TOKEN": token,
     }
-    return requests.get(v, headers=headers).json()
+    return requests.get(url, headers=headers).json()
