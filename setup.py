@@ -1,3 +1,4 @@
+from pathlib import Path
 from setuptools import setup, find_packages
 
 setup(
@@ -6,6 +7,6 @@ setup(
     description="",
     packages=find_packages(),
     author="Mohamed Zeba, Abdoul Kader Kaboré",
-    author_email="<parice02@hotmail.com>, <derokabore@gmail.com>",
+    author_email="<parice02@hotmail.com>",
     zip_safe=False,
 )
