@@ -1,4 +1,4 @@
-[tool.poetry]
+[project]
 name = "aqilas-sms"
 classifiers = [
     "Development Status :: 4 - Beta",
