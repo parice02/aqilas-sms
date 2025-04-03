@@ -14,7 +14,7 @@ def get_credit(token: str):
         "content-type": "application/json",
         "X-AUTH-TOKEN": token,
     }
-    return requests.get(url, headers=headers).json()
+    return requests.get(url, headers=headers)
 
 
 def send_sms(
@@ -29,7 +29,7 @@ def send_sms(
         "X-AUTH-TOKEN": token,
     }
     data = {"from": sender, "to": receivers, "text": content}
-    return requests.post(url, headers=headers, json=data).json()
+    return requests.post(url, headers=headers, json=data)
 
 
 def get_sms_status(url: str, token: str, bulkid: str):
@@ -38,4 +38,4 @@ def get_sms_status(url: str, token: str, bulkid: str):
         "content-type": "application/json",
         "X-AUTH-TOKEN": token,
     }
-    return requests.get(url, headers=headers).json()
+    return requests.get(url, headers=headers)
